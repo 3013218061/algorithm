@@ -17,8 +17,7 @@ public class AddTwoNumbers {
             ListNode node = new ListNode((val1 + val2 + carryBit) % 10);
             carryBit = val1 + val2 + carryBit > 9 ? 1 : 0;
             if(head == null){
-                head = node;
-                tail = node;
+                head = tail = node;
             }else {
                 tail.next = node;
                 tail = tail.next;
