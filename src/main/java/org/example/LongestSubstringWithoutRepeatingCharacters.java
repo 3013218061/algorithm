@@ -20,14 +20,10 @@ public class LongestSubstringWithoutRepeatingCharacters {
             while (!charSet.contains(s.charAt(end))){
                 charSet.add(s.charAt(end));
                 end++;
+                result = Math.max(result,charSet.size());
                 if(end == s.length()){
-                    return Math.max(charSet.size(), result);
+                    return result;
                 }
-            }
-            result = Math.max(result,charSet.size());
-            while (s.charAt(start) != s.charAt(end)){
-                charSet.remove(s.charAt(start));
-                start++;
             }
             charSet.remove(s.charAt(start));
             start++;
